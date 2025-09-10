@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--
+    Amaquin, Chrisitian John
+    Belarmino, John Mark
+    Ocañada, Joshua
+    Lebosada, Kit Anthony
+    Ramos, John Ariel C.
+    -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Event</title>
+</head>
+<body>
+    <button id="greetBtn">Greet</button>
+
+    <script>
+        const btn = document.getElementById('greetBtn');
+
+        btn.addEventListener('greetEvent', (e) => {
+            console.log("Hello", e.detail.name);
+        });
+
+        const greet = new CustomEvent('greetEvent', {
+            detail: { name: "John" }
+        });
+
+        btn.dispatchEvent(greet);
+    </script>
+</body>
+</html>
